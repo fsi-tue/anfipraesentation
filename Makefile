@@ -6,10 +6,10 @@ TMPDIR = tmp
 # Die dependencies müssen stimmen, da sonst keine rebuilds ausgeführt
 # werden! "\RequirePackage{snapshot}" ist hier sehr hilfreich, am besten
 # aktualisiert man das mal noch automatisch.
-DEPENDENCIES =  pictures/fsilogo_neu.pdf pictures/fachschaft.jpg \
-  pictures/fsi_saeulen.pdf pictures/chf_jodel.jpg \
-  pictures/sommerfest_platzhalter.png pictures/uebersicht_sand.pdf \
-  pictures/uebersicht_pi.pdf pictures/keepcalm.pdf
+DEPENDENCIES = beamercolorthemebeaver.sty beamerouterthemewuerzburg.sty beamerinnerthemechamfered.sty \
+anfibriefe_ws18.png fachschaft_17.jpg fsi_saeulen.graphml papierkram.jpg \
+uebersicht_pi.pdf anfihefte_ws18.png fruehstueck_18.jpg fsi_saeulen.pdf sommerfest_18.png \
+uebersicht_sand.pdf clubhaus.jpg fsilogo_neu.pdf keepcalm.pdf stocherkahn.jpg
 
 # Aliases
 all: presentation.pdf
@@ -35,7 +35,7 @@ info:
 .PHONY: help
 help:
 	@echo 'Building targets:'
-	@echo '  all            - Build the Anfi-Heft'
+	@echo '  all            - Build the Anfi-Presentation'
 	@echo 'Auxiliary targets:'
 	@echo '  info           - Show the current configuration of the makefile'
 	@echo '  help           - Show this help'

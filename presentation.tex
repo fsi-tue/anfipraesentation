@@ -1,40 +1,66 @@
-\documentclass{beamer}
+\documentclass[glossy,aspectratio=169]{beamer}
 \beamertemplatenavigationsymbolsempty
-
 \usepackage[utf8]{inputenc}
+\useoutertheme{wuerzburg}
+\useinnertheme[realshadow,corners=2pt,padding=2pt]{chamfered}
+\usecolortheme{whale}
 \usepackage[ngerman]{babel}
-\usepackage{graphicx}
-\usepackage{pdfpages}
+\usepackage{graphics, graphicx}
+\usepackage{color}
+\usepackage{latexsym}
+\usepackage{etoolbox}
+\usepackage{subfig}
+\usepackage{tikz}
+\PassOptionsToPackage{hyphens}{url}
 \usepackage{hyperref}
+\usepackage{url}
 \usepackage{qrcode}
 \usepackage{eurosym}
 
+\newcommand<>{\hover}[1]{\uncover#2{%
+		\begin{tikzpicture}[remember picture,overlay]%
+		\draw[fill,opacity=0.4] (current page.south west)
+		rectangle (current page.north east);
+		\node at (current page.center) {#1};
+		\end{tikzpicture}}
+}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+
+
 \title{Fachschaftsvorstellung}
-\subtitle{Fachschaft? Kann man das essen?}
 
 \begin{document}
 	%\maketitle
 	\begin{frame}
 		\centering
-		\includegraphics[width=0.8\textwidth]{pictures/fsilogo_neu.pdf}
-		\maketitle
+		\includegraphics[width=0.8\textwidth]{pictures/fsilogo_neu.pdf}\\
+		\vspace*{1cm}
+		\begin{Large}
+			Fachschaft? Kann man das essen?
+		\end{Large}
+		
 	\end{frame}
 	
 	\begin{frame}{Wer sind wir?}
 		\begin{figure}
-			\includegraphics[width=0.9\textwidth]{pictures/fachschaft.jpg}
+			\includegraphics[height=0.9\textheight]{pictures/fachschaft_17.jpg}
 		\end{figure}
 	\end{frame}
 	
 	\begin{frame}{Was machen wir?}
 		\begin{figure}
 			%\includegraphics[width=0.9\textwidth]{pictures/selbstverstaendnis.pdf}
-		\includegraphics[width=0.9\textwidth]{pictures/fsi_saeulen.pdf}
+		\includegraphics[height=0.8\textheight]{pictures/fsi_saeulen.pdf}
 		\end{figure}
 	\end{frame}
  	
 	\begin{frame}{Kontakt zu Profs}
-		\begin{itemize}
+		\begin{itemize}[<+->]
 			\item stehen in engem Kontakt mit der Professorenschaft
 			\item können Probleme daher gut ansprechen
 			\item (und meistens auch beheben)
@@ -44,38 +70,54 @@
 	\end{frame}
 	
 	\begin{frame}{Studienberatung}
-		\begin{itemize}			
-			\item \textbf{Informatik \& Bioinformatik}\\			
-			Beraterin: Jessica Wolz \& Vanessa Kirchner\\
-			E-Mail: studienberatung[@]informatik[.]uni-tuebingen[.]de
+		\begin{itemize}[<+->]		
+			\item \textbf{Informatik \& Bioinformatik}\quad Berater: Thomas Sachs\\
+			E-Mail: studienberatung[@]informatik.uni-tuebingen.de
 			
-			\item \textbf{Kognitionswissenschaft}\\	
-			Berater: Paul Fischer \& Christian Secker\\
-			E-Mail: kogni-beratung[@]fsi[.]uni-tuebingen[.]de
+			\item \textbf{Kognitionswissenschaft}\quad 
+			Berater: Paul Fischer \& Lia Schmid\\
+			E-Mail: kogni-beratung[@]fsi.uni-tuebingen.de
 			
-			\item \textbf{Medieninformatik}\\
-			Berater: Vanessa Kirchner\\
-			E-Mail: medieninformatik[@]uni-tuebingen[.]de\\
+			\item \textbf{Medieninformatik}\quad 
+			Beraterin: Vanessa Kirchner\\
+			E-Mail: medieninformatik[@]uni-tuebingen.de\\
 			
-			\item \textbf{Medizininformatik}\\			
-			Beraterin: Marie Gauder\\
-			E-Mail: medizininformatik[@]uni-tuebingen[.]de
+			\item \textbf{Medizininformatik}\quad 		
+			Berater: Felix Sieghörtner\\
+			E-Mail: medizininformatik[@]uni-tuebingen.de
 			
+			\item \textbf{Lehramt}\quad 
+			Beraterin: Saskia Honeck\\
+			E-Mail: lehramt[@]informatik.uni-tuebingen.de
 		\end{itemize}
 	\end{frame}
 
 	\begin{frame}{Server \& Administration}
-		\begin{itemize}			
+		\begin{itemize}[<+->]			
 			\item Betreiben und Warten von verschiedener Infrastruktur
-			\begin{itemize}
+			\begin{itemize}[<+->]
 				\item Mailinglisten
 				\item Website
 				\item Prüfungsprotokolleinterface (PPI)
 				\item Verkaufssystem
+				\item Pizzasystem
 			\end{itemize}
 			\item Usermanagement
 			\item Entwicklung und Betrieb von Tools zur Fachschaftsarbeit
 		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Fachschaft auf GitHub}
+		\begin{itemize}[<+->]
+			\item neue Fachschaftshomepage 
+			\item Info-Display
+			\item Anfi-Heft und Anfi-Brief
+			\item weitere Tools
+		\end{itemize}
+		
+		\begin{center}
+			\url{https://github.com/fsi-tue/}
+		\end{center}
 	\end{frame}
 	
 	\begin{frame}{Server \& Administration}
@@ -84,7 +126,7 @@
 			\begin{column}{.5\textwidth}
 				\textbf{*-InformatikerInnen:}
 				\small
-				\begin{itemize}
+				\begin{itemize}[<+->]
 					\item info-studium 
 					\item info-talk
 					\item info-jobs
@@ -94,7 +136,7 @@
 			\begin{column}{.5\textwidth}
 				\textbf{Kognis:}\\
 				\small
-				\begin{itemize}
+				\begin{itemize}[<+->]
 					\item kogwiss 
 					\item versuche
 					\item info-studium
@@ -104,33 +146,38 @@
 			\end{column}
 		\end{columns}
 		\vfill
-		\textbf{Anmeldung:} Mail ohne Betreff und Inhalt an \$LISTNAME-subscribe@fsi.uni-tuebingen.de
+		\textbf{Anmeldung:} Info-Seite der jeweiligen Liste unter \url{https://www.fsi.uni-tuebingen.de/mailman/listinfo}
 	
 	\end{frame}
 	
 	\begin{frame}{Erstsemesterveranstaltungen}
-		\begin{itemize}
+		\begin{columns}[T]
+			\column{0.4\linewidth}
+		\begin{itemize}[<+->]
 			\item Planung und Organisation der verschiedenen Veranstaltungen
-			\begin{itemize}
-				%\item Grillen, Frühstück, Kneipentour, etc.
-				\item Grillen, Filmeabend, HowTo Studium, Kneipentour etc.
-				%\item Erstiwochenende
+			\begin{itemize}[<+->]
+				\item Grillen, Frühstück, Kneipentour, Filmeabend, Stadtralley, Lehrstuhlführungen etc.
+				\item Ersti-Wochenende
 			\end{itemize}
-			\item Vorbereitung von Infos
-			\begin{itemize}
+			\item Vorbereitung von Info-Material
+			\begin{itemize}[<+->]
 				\item Brief
 				\item Heft
 			\end{itemize}
+			\item Vorstellung der Studiengänge auf dem Studieninformationstag
 		\end{itemize}
+		\column{0.6\linewidth}
+		\includegraphics[width=\linewidth]{pictures/fruehstueck_18.jpg}
+	\end{columns}
 	\end{frame}
 	
 	\begin{frame}{Anfibrief und Anfiheft}
 		\begin{columns}
 			\begin{column}{.5\linewidth}
-				\includegraphics[width=\linewidth]{pictures/papierkram.jpg}
+				\includegraphics[height=0.8\textheight]{pictures/anfibriefe_ws18.png}
 			\end{column}
 			\begin{column}{.5\linewidth}
-				\includegraphics[width=\linewidth]{pictures/anfihefte.png}
+				\includegraphics[height=0.8\textheight]{pictures/anfihefte_ws18.png}
 			\end{column}
 		\end{columns}
 		Auch online: \url{https://www.fsi.uni-tuebingen.de/erstsemester/material/start}
@@ -140,11 +187,11 @@
 		\framesubtitle{ClubHausFest}
 		\begin{columns}
 			\begin{column}{.6\linewidth}
-				\begin{itemize}
+				\begin{itemize}[<+->]
 					\item jeden Donnerstag
 					\item im Clubhaus (gegenüber der neuen Aula)
 					\item Jede Woche von anderer Fachschaft/Gruppierung
-					\item CHF der Fachschaften Info/Kogni/Psycho am 09.11.
+					%\item CHF der Fachschaften Info/Kogni/Psycho am 09.11.
 					\item \textbf{Eintritt frei, Studentenausweis mitbringen!}
 				\end{itemize}
 			\end{column}
@@ -160,15 +207,15 @@
 		\framesubtitle{Sommerfest}
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.9\textwidth]{pictures/sommerfest.png}
-			\caption{Plakat Sommerfest 2017}
+			\includegraphics[height=0.75\textheight]{pictures/sommerfest_18.png}
+			\caption{Plakat Sommerfest 2018}
 			%\includegraphics[width=0.9\textwidth]{pictures/sommerfest_platzhalter.png}
 		\end{figure}
 	\end{frame}
 	
 	\begin{frame}{Partys \& Feste}
 		\framesubtitle{weiteres}
-		\begin{itemize}
+		\begin{itemize}[<+->]
 			\item Spieleabende
 			\item Stadtralleys 
 			\item LAN-Partys
@@ -177,21 +224,21 @@
 		\end{itemize}
 	\end{frame}
 	
-	\begin{frame}{Anfi-Wochenende}
-		\framesubtitle{in Königsheim (bei Albstadt)}
-		\begin{itemize}
-		\item Findet 1x pro Jahr statt (Für Anfis im Sommer- und Wintersemester)
-		\item \textbf{10. November bis 12. November}
-		\item max. Teilnehmerzahl: $\approx$ 38 Personen
-		\item Kosten pro Person: \EUR{40} (+ Getränke)
-		\item Weitere Infos und \textbf{Anmeldung} unter \url{https://www.fsi.uni-tuebingen.de/erstsemester/veranstaltungen/wochenende}
-	\end{itemize}
-	\end{frame}
+	%\begin{frame}{Anfi-Wochenende}
+	%	\framesubtitle{in Königsheim (bei Albstadt)}
+	%	\begin{itemize}[<+->]
+	%	\item Findet 1x pro Jahr statt (Für Anfis im Sommer- und Wintersemester)
+	%	\item \textbf{10. November bis 12. November}
+	%	\item max. Teilnehmerzahl: $\approx$ 38 Personen
+	%	\item Kosten pro Person: \EUR{40} (+ Getränke)
+	%	\item Weitere Infos und \textbf{Anmeldung} unter \url{https://www.fsi.uni-tuebingen.de/erstsemester/veranstaltungen/wochenende}
+	%\end{itemize}
+	%\end{frame}
 	
 %	\begin{frame}{Hochschulpolitik \& Gremien}
 %		\framesubtitle{Fakultätsrat}
 %	 	Entscheidet über
-%	 	\begin{itemize}
+%	 	\begin{itemize}[<+->]
 %	 		\item Finanzen
 %	 		\item neue Professuren
 %	 		\item Forschung und Lehre
@@ -202,11 +249,11 @@
 	
 	%\begin{frame}{Hochschulpolitik \& Gremien}
 	%	\framesubtitle{Studienkommission}
-	% 	\begin{itemize}
+	% 	\begin{itemize}[<+->]
 	% 		\item Wichtigstes Gremium für den Studienablauf
 	% 		\item Gestaltet Modulhandbuch
 	% 		\item Zwei Kommissionen:
-	% 			\begin{itemize}
+	% 			\begin{itemize}[<+->]
 	% 				\item (Bio-, Medien-, Medizin-) Informatik
 	% 				\item Kognitionswissenschaft
 	% 			\end{itemize}
@@ -216,9 +263,9 @@
 	
 %	\begin{frame}{Hochschulpolitik \& Gremien}
 %		\framesubtitle{Prüfungsausschuss}
-%	 	\begin{itemize}
+%	 	\begin{itemize}[<+->]
 %	 		\item Anerkennung von Studienleistungen
-%	 			\begin{itemize}
+%	 			\begin{itemize}[<+->]
 %	 				\item Auslandssemester?
 %	 				\item ungewöhnliche Vorlesung für ein bestimmtes Modul?
 %	 				\item neues Nebenfach?
@@ -230,16 +277,16 @@
 %	
 %	\begin{frame}{Hochschulpolitik \& Gremien}
 %		\framesubtitle{weitere studentische Gremien}
-%	 	\begin{itemize}
+%	 	\begin{itemize}[<+->]
 %	 		\item StuRa - Studierendenrat (ersetzt AStA)
-%	 			\begin{itemize}
+%	 			\begin{itemize}[<+->]
 %	 				\item Hochschulpolitisches Mandat
 %	 				\item kann Projekte unterstützen
 %	 				\item Gebühren zu Beginn des Semesters
 %	 			\end{itemize}
 %	 		\item Senat
 %	 		\item Vertreter fühlen sich meist einer Hochschulpolitischen Gruppe zugehörig:
-%	 			\begin{itemize}
+%	 			\begin{itemize}[<+->]
 %	 				\item FSVV
 %	 				\item GHG
 %	 				\item JuSos
@@ -253,27 +300,32 @@
 		\framesubtitle{wie geht das?}
 		\begin{columns}
 			\begin{column}{.5\linewidth}
-				\begin{itemize}
+				\begin{itemize}[<+->]
 					\item einfach vorbeikommen und mitmachen ;-)
 					\item regelmäßige Treffen im Fachschaftszimmer (Sand, Zimmer C125)
-					\item nächstes Treffen: \\Donnerstag 19.10. 18:30 Uhr
+					\item nächstes Treffen: \\Donnerstag 25.10. 18:30 Uhr
 					\item teilweise weitere Treffen zu Teilbereichen der Fachschaftsarbeit
 					\item Kogni-Treffen: \emph{folgt}
 					\item \textbf{Kommt vorbei!}
 				\end{itemize}
 			\end{column}
 			\begin{column}{0.5\linewidth}
-				\includegraphics[width=\linewidth]{pictures/uebersicht_sand.pdf}\\
-				\includegraphics[width=\linewidth]{pictures/uebersicht_pi.pdf}\\
+				\includegraphics[width=0.7\linewidth]{pictures/uebersicht_sand.pdf}\\
+				\includegraphics[width=0.7\linewidth]{pictures/uebersicht_pi.pdf}\\
 			\end{column}
 		\end{columns}
 	\end{frame}
 	
+	\begin{frame}{Freizeit}
+		\centering 
+		\includegraphics[height=0.75\textheight]{pictures/stocherkahn.jpg}
+	\end{frame}
+	
 	\begin{frame}
 		\begin{columns}
-			\column{0.6\textwidth}
-			\includegraphics[width=\textwidth]{pictures/keepcalm.pdf}
-			\column{0.4\textwidth}
+			\column{0.5\textwidth}
+			\includegraphics[height=\textheight]{pictures/keepcalm.pdf}
+			\column{0.5\textwidth}
 			\centering
 			\begin{huge}
 				Wir freuen uns auf euch! \vspace*{1cm}
