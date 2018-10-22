@@ -7,9 +7,9 @@ TMPDIR = tmp
 # werden! "\RequirePackage{snapshot}" ist hier sehr hilfreich, am besten
 # aktualisiert man das mal noch automatisch.
 DEPENDENCIES = beamercolorthemebeaver.sty beamerouterthemewuerzburg.sty beamerinnerthemechamfered.sty \
-anfibriefe_ws18.png fachschaft_17.jpg fsi_saeulen.graphml papierkram.jpg \
-uebersicht_pi.pdf anfihefte_ws18.png fruehstueck_18.jpg fsi_saeulen.pdf sommerfest_18.png \
-uebersicht_sand.pdf clubhaus.jpg fsilogo_neu.pdf keepcalm.pdf stocherkahn.jpg
+pictures/anfibriefe_ws18.png pictures/fachschaft_17.jpg pictures/fsi_saeulen.graphml pictures/papierkram.jpg \
+pictures/uebersicht_pi.pdf pictures/anfihefte_ws18.png pictures/fruehstueck_18.jpg pictures/fsi_saeulen.pdf pictures/sommerfest_18.png \
+pictures/uebersicht_sand.pdf pictures/clubhaus.jpg pictures/fsilogo_neu.pdf pictures/keepcalm.pdf pictures/stocherkahn.jpg
 
 # Aliases
 all: presentation.pdf
