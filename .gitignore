@@ -1,10 +1,17 @@
+# Makefile + Nix
+*.pdf
+tmp
+/result
+
+# Editor files (Vim, Emacs and others)
+*.swp
+*~
+
+# LaTeX
 *.aux
 *.toc
-*~
 *.nav
 *.out
 *.toc
 *.log
 *.snm
-*.pdf
-tmp
