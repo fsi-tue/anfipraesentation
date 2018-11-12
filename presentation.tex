@@ -17,6 +17,12 @@
 \usepackage{qrcode}
 \usepackage{eurosym}
 
+% Override these to reproduce a build, if you run
+% "nix-build --argstr date YYYY-MM-DD" you don't need to change them manually:
+\year=\year
+\month=\month
+\day=\day
+
 \newcommand<>{\hover}[1]{\uncover#2{%
 		\begin{tikzpicture}[remember picture,overlay]%
 		\draw[fill,opacity=0.4] (current page.south west)
