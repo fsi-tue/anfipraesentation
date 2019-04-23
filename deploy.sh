@@ -28,11 +28,10 @@ Build date: $(date --utc +'%F')
 Nixpkgs commit: $(cat ~/.nix-defexpr/channels/nixpkgs/.git-revision)
 EOF
 cat <<EOF > sftp-commands
-ls -al
--rm *
-put result/*
+put result/presentation.pdf
 put build-information
-chmod 644 *
+chmod 644 presentation.pdf
+chmod 644 build-information
 EOF
 sftp -i /tmp/id_rsa -b sftp-commands "${SFTP_USER}@${HOST}:${TARGET_DIRECTORY}"
 rm /tmp/id_rsa
