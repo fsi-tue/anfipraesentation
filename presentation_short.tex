@@ -8,7 +8,7 @@
 \renewcommand*\familydefault{\sfdefault}
 \usepackage[fixed]{fontawesome5}
 
-\useoutertheme{wuerzburg}
+\useoutertheme{infolines}
 \useinnertheme[realshadow,corners=2pt,padding=2pt]{chamfered}
 \usecolortheme{whale}
 \usepackage[ngerman]{babel}
@@ -45,6 +45,8 @@
 		\end{tikzpicture}}
 }
 
+\setbeamertemplate{headline}{}
+
 \definecolor{pblue}{rgb}{0.13,0.13,1}
 \definecolor{pgreen}{rgb}{0,0.5,0}
 \definecolor{pred}{rgb}{0.9,0,0}
@@ -58,7 +60,7 @@
 \begin{document}
     
 %---------------------------------------------------------------------------
-%   TITLE
+%   Title
 %---------------------------------------------------------------------------
 %\maketitle
 \begin{frame}
@@ -73,8 +75,22 @@
     \vspace{1.5cm}
     \semester
 \end{frame}
-	
-    
+
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+%   Table of Contents
+%   =================
+%
+%   1. Wer sind wir?
+%   2. Was machen wir?
+%   3. Mailinglisten
+%   4. Wie lernt man Leute kennen
+%       4.1 Ersti-Programm
+%       4.2 Erstiheft
+%       4.3 Discord
+%   5. Mach doch mit!	
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+
 %-------------------------------------------------------------------------------
 %   Wer sind wir?
 %-------------------------------------------------------------------------------
@@ -82,7 +98,7 @@
 \section{Wir, die FSI!}
 \begin{frame}{\insertsection}
     \begin{figure}
-        \includegraphics[height=.9\textheight]{pictures/fsi_22.jpg}
+        \includegraphics[height=.85\textheight]{pictures/fsi_22.jpg}
     \end{figure}
 
     \note{Hier labern wir sympathisch alá "Das da bin ich ohne Maske", 
@@ -217,7 +233,8 @@
     \begin{columns}
         \column{.7\textwidth}
         \centering
-        \textit{\Large Mit Leuten quatschen, Übungsblätter remote machen?}\\[1em]
+        \textit{\Large Mit Leuten quatschen, Online-Spieleabende und 
+                       Übungsblätter remote machen?}\\[1em]
         {\Huge\color{fsiblue}\faComments}
         
         
