@@ -17,6 +17,7 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ #kpsewhich XYZ.sty
     (texlive.combine {
       inherit (texlive) scheme-minimal latexmk latexconfig latex latex-bin
+        collection-fontsrecommended fontawesome5 dejavu
         etoolbox oberdiek graphics geometry hyperref url tools amsmath amscls beamer
         mathtools babel babel-german hyphen-german subfig caption qrcode xkeyval
         epstopdf-pkg eurosym translator;

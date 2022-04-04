@@ -12,11 +12,18 @@ pictures/uebersicht_pi.pdf pictures/anfihefte_ws18.png pictures/fruehstueck_18.j
 pictures/uebersicht_sand.pdf pictures/clubhaus.jpg pictures/fsilogo_neu.pdf pictures/keepcalm.pdf pictures/stocherkahn.jpg
 
 # Aliases
-all: presentation.pdf
+all: presentation.pdf presentation_short.pdf
 
+full: presentation.pdf
 presentation.pdf: presentation.tex $(DEPENDENCIES)
 	if [ ! -d $(TMPDIR) ]; then mkdir $(TMPDIR); fi
 	latexmk -output-directory=$(TMPDIR) -pdf -pdflatex="pdflatex" $<
+	cp $(TMPDIR)/$@ $@
+
+short: presentation_short.pdf
+presentation_short.pdf: presentation_short.tex $(DEPENDENCIES)
+	if [ ! -d $(TMPDIR) ]; then mkdir $(TMPDIR); fi
+	pdflatex -output-directory=$(TMPDIR) $<
 	cp $(TMPDIR)/$@ $@
 
 .PHONY: clean
@@ -25,7 +32,7 @@ clean:
 
 .PHONY: distclean
 distclean: clean
-	if [ -f presentation.pdf ]; then rm presentation.pdf; fi
+	rm -f presentation.pdf presentation_short.pdf
 
 .PHONY: info
 info:
@@ -35,7 +42,9 @@ info:
 .PHONY: help
 help:
 	@echo 'Building targets:'
-	@echo '  all            - Build the Anfi-Presentation'
+	@echo '  all            - Build the Ersti-Presentations'
+	@echo '  full           - Build the full length Ersti-Presentation'
+	@echo '  short          - Build the shortened Ersti-Presentation'
 	@echo 'Auxiliary targets:'
 	@echo '  info           - Show the current configuration of the makefile'
 	@echo '  help           - Show this help'
