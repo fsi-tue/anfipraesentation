@@ -16,10 +16,10 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ #kpsewhich XYZ.sty
     (texlive.combine {
-      inherit (texlive) scheme-minimal latexmk latex beamer
-        etoolbox oberdiek graphics geometry hyperref url tools amsmath amscls
+      inherit (texlive) scheme-minimal latexmk latexconfig latex latex-bin
+        etoolbox oberdiek graphics geometry hyperref url tools amsmath amscls beamer
         mathtools babel babel-german hyphen-german subfig caption qrcode xkeyval
-        eurosym translator;
+        epstopdf-pkg eurosym translator;
     })
   ];
 
