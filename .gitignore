@@ -15,3 +15,6 @@ tmp
 *.toc
 *.log
 *.snm
+
+# Presenter slides
+*.pdfpc
