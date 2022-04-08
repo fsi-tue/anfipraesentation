@@ -11,6 +11,8 @@ pictures/anfibriefe_ws18.png pictures/fachschaft_17.jpg pictures/fsi_saeulen.gra
 pictures/uebersicht_pi.pdf pictures/anfihefte_ws18.png pictures/fruehstueck_18.jpg pictures/fsi_saeulen.pdf pictures/sommerfest_18.png \
 pictures/uebersicht_sand.pdf pictures/clubhaus.jpg pictures/fsilogo_neu.pdf pictures/keepcalm.pdf pictures/stocherkahn.jpg
 
+BASE_CONF = 
+
 # Aliases
 all: presentation.pdf presentation_short.pdf
 
@@ -20,15 +22,26 @@ presentation.pdf: presentation.tex $(DEPENDENCIES)
 	latexmk -output-directory=$(TMPDIR) -pdf -pdflatex="pdflatex" $<
 	cp $(TMPDIR)/$@ $@
 
-short: presentation_short.pdf
 presentation_short.pdf: presentation_short.tex $(DEPENDENCIES)
 	if [ ! -d $(TMPDIR) ]; then mkdir $(TMPDIR); fi
-	pdflatex -output-directory=$(TMPDIR) $<
+	latexmk -output-directory=$(TMPDIR) -pdf -pdflatex="pdflatex" $<
 	cp $(TMPDIR)/$@ $@
+
+short: nonotes presentation_short.pdf
+nonotes:
+	echo '$(BASE_CONF)' > makeconfig.tex
+
+annotated: notes presentation_short.pdf
+notes:
+	echo '$(BASE_CONF) \notestrue' > makeconfig.tex
+
+present: annotated
+	pdfpc -n right presentation_short.pdf
 
 .PHONY: clean
 clean:
 	if [ -d $(TMPDIR) ]; then rm --recursive ./$(TMPDIR); fi
+	rm -f makeconfig.tex
 
 .PHONY: distclean
 distclean: clean
@@ -45,6 +58,8 @@ help:
 	@echo '  all            - Build the Ersti-Presentations'
 	@echo '  full           - Build the full length Ersti-Presentation'
 	@echo '  short          - Build the shortened Ersti-Presentation'
+	@echo '  annotated      - Build short with notes on the righthand side'
+	@echo '  present        - Build annotated and show using pdfpc (pdfpc required)'
 	@echo 'Auxiliary targets:'
 	@echo '  info           - Show the current configuration of the makefile'
 	@echo '  help           - Show this help'

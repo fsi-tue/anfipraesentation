@@ -1,7 +1,31 @@
 % !TeX document-id = {fc3ccb1e-aeba-4c77-9990-74eef049f67c}
 % !TeX TXS-program:compile = txs:///pdflatex/[-output-directory=tmp]
 
+%============================ TODO: UPDATE =====================================
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\newcommand{\semester}{         SoSe 22}
+\newcommand{\dateCHF}{          (12.05.)}
+\newcommand{\dateSommerfest}{   (24.06.)}
+\newcommand{\dateSpieleabend}{  (12.04., 28.04.)}
+\newcommand{\dateGrillen}{      (13.04.)}
+\newcommand{\dateStadtrallye}{  (20.04.)}
+\newcommand{\dateKneipentour}{  (20.04.)}
+\newcommand{\dateWanderung}{    (24.04.)}
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\newcommand{\timeSitzung}{Donnerstags 18:30 Uhr}
+\newcommand{\locFachschaftszimmer}{C125 - Sand 14}
+\newcommand{\linkBBB}{https://bbb.fsi.uni-tuebingen.de/b/luk-v3t-dvk}
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\newcommand{\linkMaillists}{https://www.fsi.uni-tuebingen.de/infos/maillists/}
+\newcommand{\linkErsti}{https://www.fsi.uni-tuebingen.de/du-bist-ersti/}
+\newcommand{\linkAnmeldung}{https://eei.fsi.uni-tuebingen.de/}
+\newcommand{\linkErstiheft}{https://teri.fsi.uni-tuebingen.de/anfiheft/}
+\newcommand{\linkDiscord}{https://discord.gg/d4X2WjHWmQ}
+\newcommand{\linkPresentation}{https://www.fsi.uni-tuebingen.de/anfip}
+%===============================================================================
+
 \documentclass[aspectratio=169]{beamer}
+
 \beamertemplatenavigationsymbolsempty
 \usepackage[utf8]{inputenc}
 \usepackage{DejaVuSans}
@@ -30,12 +54,14 @@
 \month=\month
 \day=\day
 
-\newcommand{\semester}{SoSe 22}
-\newcommand{\linkMaillists}{https://www.fsi.uni-tuebingen.de/infos/maillists/}
-\newcommand{\linkErsti}{https://www.fsi.uni-tuebingen.de/du-bist-ersti/} % Maybe use this link
-\newcommand{\linkAnmeldung}{https://eei.fsi.uni-tuebingen.de/}
-\newcommand{\linkErstiheft}{https://teri.fsi.uni-tuebingen.de/anfiheft/}
-\newcommand{\linkDiscord}{https://discord.gg/d4X2WjHWmQ}
+% For a presenter mode viewer like 'pdfpc' invoked with 'make notes'
+\newif\ifnotes
+\input{makeconfig.tex}
+\ifnotes
+    \usepackage{pgfpages}
+    \setbeameroption{show notes on second screen}
+\fi
+
 
 \newcommand<>{\hover}[1]{\uncover#2{%
 		\begin{tikzpicture}[remember picture,overlay]%
@@ -59,10 +85,9 @@
 
 \begin{document}
     
-%---------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 %   Title
-%---------------------------------------------------------------------------
-%\maketitle
+%------------------------------------------------------------------------------
 \begin{frame}
     \centering
     \vspace{.5cm}
@@ -101,8 +126,8 @@
         \includegraphics[height=.85\textheight]{pictures/fsi_22.jpg}
     \end{figure}
 
-    \note{Hier labern wir sympathisch alá "Das da bin ich ohne Maske", 
-          "Das ist der Tim", usw.}
+    \note{Hier labern wir sympathisch alá ''Das da bin ich ohne Maske'', 
+          ''Das ist der Tim'', ''Oh guck! Grace!'' usw.}
 \end{frame}
 
 
@@ -120,13 +145,28 @@
         \column{.5\textwidth}
         \begin{itemize}
             \item \textbf{Beratung/Betreung} bei deinen Problemen
+            \note[item]{Bei Fragen und Problemem an die Fachschaft wenden}
+
             \item \textbf{Kontakt} zur Professorenschaft
+            \note[item]{FBI erwähnen aka monatl. Treffen 
+                        \& FB Leitung ist uns aufgeschlossen}
+
             \item \textbf{Aktionen} und \textbf{Events}
-                  \faMusic Clubhausfest (12.05.) und 
-                  \faBeer Sommerfest (24.06.) 
+                  \faMusic Clubhausfest \dateCHF\ und \\
+                  \faBeer Sommerfest \dateSommerfest
+            \note[item]{Neben Ansprechsperson sind wir für Alkoholausschank da}
+
             \item \textbf{Hochschulpolitik}: StuRa, FakRat
             \item \textbf{Gremien} wie Studienkommission, Prüfungsausschuss,
                   Berufungskommissionnen
+            \note[item]{Im PA sitzen Leute, die bei Härtefallanträgen auf deiner
+                        Seite sind. Evaluationen werden in Stuko besprochen,...}
+
+            \item \textbf{Tools \& Services} wie PPI, KKI, BBB, CodiMD
+            \note[item]{Alktklausuren auf \texttt{ppi.fsi.uni-...}, Kneipen auf 
+                        \texttt{kki.fsi.uni-...}, Eigene VideoConf auf 
+                        \texttt{bbb.fsi.uni-...}, Gemeinsame Notizen auf 
+                        \texttt{notes.fsi.uni-...}}
         \end{itemize}
         
     \end{columns}
@@ -155,6 +195,14 @@
     \end{itemize}
     \vfill
     \textbf{Anmeldung:} \url{\linkMaillists}
+
+    \note{Das hier ist \textit{arguably} die wichtigste Folie in der Präsentation.\\
+          Die einzige Möglichkeit von der Anmeldung zum \textbf{Praktikum Mikrocomputer}
+          und dem \textbf{Teamprojekt} zu erfahren. Letztere ist nur einmal im 
+          Jahr.\\
+          Oder wenn der Prüfungsausschuss Informationen verschicken will.\\[2em]
+          info-talk für Studenten-Kosmos und info-jobs Jobangebote, beide
+          moderiert.}
 \end{frame}
 
 \begin{frame}{Direkt anmelden!}
@@ -176,6 +224,7 @@
         \\[1em]
         \url{\linkMaillists}
     \end{columns}
+    \note{Hier jetzt Zeit geben, dass sich die Erstis anmelden können}
 \end{frame}
 
 
@@ -186,6 +235,8 @@
 \section{Wie lerne ich Leute kennen?}
 
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% TODO: Might replace with generic version without dates
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \subsection{Ersti-Programm}
 
 \begin{frame}{\insertsubsection}
@@ -193,11 +244,11 @@
         \column{.7\textwidth}
         \begin{itemize}
             \large
-            \item {\large\faDice} Spieleabend (12.04., 28.04.)
-            \item {\large\faUtensils} Grillen (13.04.)
-            \item {\large\faRoute} Stadtrallye (20.04.)
-            \item {\large\faBeer} Kneipentour (20.04.)
-            \item {\large\faHiking} Wanderung (24.04.)
+            \item {\large\faDice} Spieleabend  \dateSpieleabend
+            \item {\large\faUtensils} Grillen  \dateGrillen
+            \item {\large\faRoute} Stadtrallye \dateStadtrallye
+            \item {\large\faBeer} Kneipentour  \dateKneipentour
+            \item {\large\faHiking} Wanderung  \dateWanderung
         \end{itemize}
         \centering
         \vspace{1em}
@@ -209,13 +260,16 @@
         \\[1em]
         \url{\linkAnmeldung}
     \end{columns}
+
+    \note{Hier lässt sich darauf hinweisen, dass die Anmeldung zwecks Planbarkeit
+          sehr gewünscht ist.}
 \end{frame}
 
 \begin{frame}{Erstiheft}
     \begin{columns}
         \column{.7\textwidth}
         \begin{figure}
-            \colorbox[gray]{.95}{
+            \colorbox[HTML]{c3e6f1}{
                 \includegraphics[height=.8\textheight]{pictures/erstiheft.pdf}}
         \end{figure}
         
@@ -225,6 +279,9 @@
         \\[1em]
         \url{\linkErstiheft}
     \end{columns}
+
+    \note{Hier kann auch sehr gut darauf hingewiesen werden, dass alle unsere
+          Materialien online abrufbar sind.}
 \end{frame}
 
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -244,6 +301,9 @@
         \\[1em]
         \url{\linkDiscord}
     \end{columns}
+
+    \note{Kommunikation ist wichtig; Wurde von nem Studi eröffnet, wir haben 
+          uns da rangehangen; usw u so fort...}
 \end{frame}
 
 
@@ -254,11 +314,31 @@
 \section{Mach doch mit!}
 \begin{frame}{\insertsection}
     \Large
-    {\Huge\color{fsiblue} \faClock[regular]}   Donnerstags 18:30 Uhr \\[.5em]
-    {\Huge\color{fsiblue} \faMapMarker*}       C125 - Sand 14 \\[.5em]
-    \color{darkgray}
-    {\Huge\color{fsiblue!50!darkgray} \faMapMarker*}       
-                            \url{https://bbb.fsi.uni-tuebingen.de/b/luk-v3t-dvk}
+    {\Huge\color{fsiblue} \faClock[regular]}   \timeSitzung \\[.5em]
+    {\Huge\color{fsiblue} \faMapMarker*}       \locFachschaftszimmer\\[.5em]
+    \color{darkgray}    % TODO: Might be removable for future screenings
+    {\Huge\color{fsiblue!50!darkgray} \faMapMarker*} \url{\linkBBB}
 \end{frame}
+
+%-------------------------------------------------------------------------------
+%   Link zu dieser Präsentation
+%-------------------------------------------------------------------------------
+
+\section{Diese Präsentation zum selber durchklicken}
+\begin{frame}{\insertsection}
+    \begin{columns}
+        \column{.5\textwidth}
+        \centering
+        \includegraphics[height=.8\textheight]{pictures/keepcalm.pdf}
+
+        \column{.5\textwidth}
+        \centering
+        \qrcode[height=.5\textheight]{\linkPresentation}
+        \\[1em]
+        \url{\linkPresentation}
+
+    \end{columns}
+\end{frame}
+
 
 \end{document}
