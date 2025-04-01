@@ -6,18 +6,20 @@
 % - (Update 'pictures/erstiheft.pdf')
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \newcommand{\semester}{         WiSe 24}
-\newcommand{\dateCHF}{          (31.10.)}
+\newcommand{\dateCHF}{          (22.05.)}
 %         ⚠ COMMENT OUT EVERY NOT-OCCURING EVENT STARTING LINE 250 ⚠
-% \newcommand{\dateSommerfest}{   (28.06.)}
-\newcommand{\dateSpieleabend}{  (01.10., 10.10., 17.10.)}
-\newcommand{\dateGrillen}{      (12.10., 19.10.)}
+\newcommand{\dateSommerfest}{   (27.06.)}
+\newcommand{\dateSpieleabend}{  (01.04., 16.04.)}
+\newcommand{\dateGrillen}{      (12.04., 25.05.)}
 %\newcommand{\dateStadtrallye}{  (20.10.)}
-\newcommand{\dateKneipentour}{  (08.10., 14.10.)}
-\newcommand{\dateWanderung}{    (05.10., 26.10.)}
-\newcommand{\dateFilmabend}{    (15.10.)} 
-\newcommand{\dateFlunkyball}{   (02.10.)}
-\newcommand{\dateCTF}{          (20.10.)}
-\newcommand{\dateKastenlauf}{   (16.10.)}
+\newcommand{\dateAbenteuerSchnitzeljagd}{21.04.}
+\newcommand{\dateKneipentour}{  (11.04, 15.04.)}
+\newcommand{\dateWanderung}{    (05.04., 03.05.)}
+% \newcommand{\dateFilmabend}{    (15.10.)} 
+\newcommand{\dateFlunkyball}{   (14.04.)}
+% \newcommand{\dateCTF}{          (22.05)}
+\newcommand{\dateKastenlauf}{   (23.04.)}
+\newcommand{\dateBreakfast}{11.04.}
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \newcommand{\timeSitzung}{Donnerstags 18:30 Uhr}
 \newcommand{\locFachschaftszimmer}{C125 - Sand 14}
@@ -141,15 +143,15 @@
 %   Wer sind wir?
 %-------------------------------------------------------------------------------
 
-%\section{Wir, die FSI!}
-%\begin{frame}{\insertsection}
-%    \begin{figure}
-%        \includegraphics[width=\linewidth]{pictures/fsi_22.jpg}
-%    \end{figure}
-%
-%    \note{Hier labern wir sympathisch alá ''Das da bin ich ohne Maske'', 
-%          ''Das ist der Tim'', ''Oh guck! Grace!'' usw.}
-%\end{frame}
+\section{Wir, die FSI!}
+\begin{frame}{\insertsection}
+    \begin{figure}
+        \includegraphics[width=11cm]{pictures/fsi24.jpg}
+    \end{figure}
+
+    \note{Hier labern wir sympathisch alá ''Das da bin ich ohne Maske'', 
+          ''Das ist der Tim'', ''Oh guck! Grace!'' usw.}
+\end{frame}
 
 
 
@@ -161,10 +163,28 @@
 \begin{frame}{\insertsection}
     \begin{columns}
         \column{.5\textwidth}
-        {\huge\itshape \textcolor{fsikturqoise}{Wir vertreten euch!}}
-        
+        % \huge\itshape \textcolor{fsikturqoise}{Wir vertreten euch!}
+        % \begin{frame}[<+->]
+            \only<1>{\includegraphics[width=\linewidth]{pictures/MedienInfoStand.JPG}}
+            \only<2>{\includegraphics[width=\linewidth]{pictures/FSI_pulli_hinten.JPG}}
+            \only<3>{\includegraphics[width=\linewidth]{pictures/productiveFSIKWork.JPG}}
+            \only<4>{\includegraphics[width=\linewidth]{pictures/FSIKzusammen.JPG}}
+            \only<5>{
+                \begin{minipage}{\linewidth}
+                    \centering
+                    \hspace{-1.5cm} % Bild weiter nach links verschieben
+                    \includegraphics[width=5cm]{pictures/clubhausfest.JPG} \\
+                    \vspace{0,01cm} % Vertikalen Abstand anpassen
+                    \hspace{1.5cm} % Unteres Bild mehr nach rechts schieben
+                    \includegraphics[width=5cm]{pictures/sommerfest.JPG}
+                   %  \includegraphics[width=5cm]{pictures/weihnachtsfeier.JPG}
+                \end{minipage}
+                        }
+            \only<6>{\includegraphics[width=\linewidth]{pictures/fsi24_lieb.jpg}}
+            
+        % \end{itemize}
         \column{.5\textwidth}
-        \begin{itemize}
+        \begin{itemize}[<+->]
             \item \textbf{Beratung/Betreuung} bei deinen Problemen
             \note[item]{Bei Fragen und Problemen an die Fachschaft wenden}
 
@@ -172,11 +192,19 @@
             \note[item]{FBI erwähnen aka monatl. Treffen 
                         \& FB Leitung ist uns aufgeschlossen}
 
+            \item \textbf{Repräsentation} in der Hochschulpolitik
+            \note[item]{FBI erwähnen aka monatl. Treffen 
+                        \& FB Leitung ist uns aufgeschlossen}
+
+            \item \textbf{Tools \& Services} wie PPI, Werkstatt
+
             \item \textbf{Aktionen} und \textbf{Events}
                   \faMusic Clubhausfest \dateCHF\ und \\
-                  \faBeer Weihnachtsfeier (TBA)
-                  %\faBeer Sommerfest \dateSommerfest
+                  % \faBeer Weihnachtsfeier (TBA)
+                  \faBeer Sommerfest \dateSommerfest
             \note[item]{Neben Ansprechsperson sind wir für Alkoholausschank da}
+
+            \item \textbf{Spaß haben!!} 
 
 %            \item \textbf{Hochschulpolitik}: StuRa, FakRat
 %            \item \textbf{Gremien} wie Studienkommission, Prüfungsausschuss,
@@ -258,8 +286,8 @@
     \begin{columns}
         \column{.7\textwidth}
         \begin{figure}
-            \colorbox[HTML]{c3e6f1}{
-                \includegraphics[height=.8\textheight]{pictures/erstiheft.pdf}}
+            \colorbox[HTML]{7ec850}{
+                \includegraphics[height=.8\textheight]{pictures/anfiheft-info-coverSoSe25.pdf}}
         \end{figure}
         
         \column{.3\textwidth}
@@ -289,9 +317,11 @@
             \item {\large\faBeer} Kneipentour  \dateKneipentour
             \item {\large\faUtensils} Grillen  \dateGrillen
             %\item {\large\faRoute} Stadtrallye \dateStadtrallye
-			\item {\large\faFilm} Filmabend    \dateFilmabend
+            \item {\large\faMapMarker} Abenteuer Schnitzel-Jagd \dateAbenteuerSchnitzeljagd
+			% \item {\large\faFilm} Filmabend    \dateFilmabend
 			\item {\large\faBeer} Kastenlauf   \dateKastenlauf
-			\item {\large\faFlag} Capture the Flag \dateCTF
+            \item {\large\faUtensils} Frühstück \dateBreakfast
+			% \item {\large\faFlag} Capture the Flag \dateCTF
         \end{itemize}
         \centering
         \vspace{1em}
@@ -339,12 +369,17 @@
 
 \section{Mach doch mit!}
 \begin{frame}{\insertsection}
-    \Large
-    {\Huge\color{fsikturqoise} \faClock[regular]}   \timeSitzung \\[.5em]
-    {\Huge\color{fsiblue} \faMapMarker*}       \locFachschaftszimmer\\[.5em]
-    {\Huge\color{fskgreen} \faMapMarker*}       \locFSKammer\\[.5em]
-    \color{darkgray}    % TODO: Might be removable for future screenings
-    % {\Huge\color{fsiblue!50!darkgray} \faMapMarker*} \url{\linkBBB}
+    \begin{columns}
+        \column{.5\textwidth}
+            \Large
+            {\Huge\color{fsikturqoise} \faClock[regular]}   \timeSitzung \\[.5em]
+            {\Huge\color{fsiblue} \faMapMarker*}       \locFachschaftszimmer\\[.5em]
+            {\Huge\color{fskgreen} \faMapMarker*}       \locFSKammer\\[.5em]
+            \color{darkgray}    
+        \column{.5\textwidth}
+            \centering
+            \includegraphics[angle=90, width=4.5cm]{pictures/bene_liebt_fsi.JPG}
+    \end{columns}
 \end{frame}
 
 %-------------------------------------------------------------------------------
@@ -370,7 +405,10 @@
 \section{Mehr Informationen...}
 \begin{frame}{\insertsection}
     \begin{columns}
-		\column{.3\textwidth}
+	\column{.3\textwidth}
+        \textcolor{fsiblue}{\qrcode[height=.5\textheight]{\linkWebsiteInfo}
+        \\[1em]
+        \url{\linkWebsiteInfo}}
         
         \column{.4\textwidth}
         \centering
@@ -378,9 +416,11 @@
         
         \column{.3\textwidth}
         \centering
+        % replaced qr code kogni for Sommersemester with Info, cause no kognis in Summer
         \textcolor{fskgreen}{\qrcode[height=.5\textheight]{\linkWebsiteKogni}
         \\[1em]
         \url{\linkWebsiteKogni}}
+        
 
     \end{columns}
 \end{frame}
