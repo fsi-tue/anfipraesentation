@@ -9,7 +9,7 @@ jobs:
       - name: Setup (Nixpkgs config and NIXPKGS_COMMIT)
         run: echo "NIXPKGS_COMMIT=$(curl -L 'https://channels.nixos.org/nixos-unstable/git-revision')" >> $GITHUB_ENV
       - name: Install Nix
-        uses: cachix/install-nix-action@v12
+        uses: cachix/install-nix-action@v31
         with:
           nix_path: nixpkgs=https://github.com/NixOS/nixpkgs/archive/${{ env.NIXPKGS_COMMIT }}.tar.gz
       - name: Clean the build environment
