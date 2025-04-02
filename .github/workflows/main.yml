@@ -18,7 +18,7 @@ jobs:
           nix-build --argstr date "$(date --date=@$(git log -1 --pretty=%ct) +%F)" --arg doCheck true
           mkdir anfipraesentation && cp result/* .BUILDINFO anfipraesentation/
       - name: Upload the anfipraesentationen (GitHub artifacts)
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: anfipraesentation
           path: anfipraesentation/
