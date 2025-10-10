@@ -5,7 +5,7 @@
 % - Update the following dates, links
 % - (Update 'pictures/erstiheft.pdf')
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-\newcommand{\semester}{         WiSe 25}
+\newcommand{\semester}{ winter term 25}
 \newcommand{\dateCHF}{          (23.10.)}
 %         ⚠ COMMENT OUT EVERY NOT-OCCURING EVENT STARTING LINE 250 ⚠
 \newcommand{\dateSommerfest}{   (27.06.)}
@@ -22,7 +22,7 @@
 \newcommand{\dateBreakfast}{    (10.10.)}
 \newcommand{\dateHuette}{       (07.11.)}
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-\newcommand{\timeSitzung}{Donnerstags 18:30 Uhr}
+\newcommand{\timeSitzung}{Thursdays 6:30 pm }
 \newcommand{\locFachschaftszimmer}{C125 - Sand 14}
 \newcommand{\locFSKammer}{C102 - Sand 14}
 % \newcommand{\linkBBB}{https://bbb.fsi.uni-tuebingen.de/b/luk-v3t-dvk}
@@ -56,7 +56,7 @@
 \useoutertheme{infolines}
 \useinnertheme[realshadow,corners=2pt,padding=2pt]{chamfered}
 \usecolortheme{fsik}
-\usepackage[ngerman]{babel}
+\usepackage[english]{babel}
 \usepackage{graphics, graphicx}
 \usepackage{color}
 \usepackage{latexsym}
@@ -103,8 +103,8 @@
 \definecolor{fsikturqoise}{HTML}{008080}
 \definecolor{fskgreen}{HTML}{008000}
 
-\title{Fachschaftsvorstellung}
-\author{\textbf{fsik}}
+\title{Student Council Introduction}
+\author{\textbf{fsi}}
 
 \begin{document}
 
@@ -115,10 +115,10 @@
 	\centering
 	\vspace{.5cm}
 	\includegraphics[width=0.6\textwidth]{pictures/fsilogo_neu.pdf}\\
-	\includegraphics[width=0.6\textwidth]{pictures/fsk-logo.png}\\ % TODO: Richtiges PDF Logo
+	% \includegraphics[width=0.6\textwidth]{pictures/fsk-logo.png}\\ % TODO: Richtiges PDF Logo
 	\vspace*{0.5cm}
 	\begin{Large}
-		Hey! Wir helfen euch $\{\text{ins}\mid\text{im}\}$ Studium!
+		Hi! We help you $\{\text{into}\mid\text{in}\}$ your studies!
 	\end{Large}
 
 	\vspace{1cm}
@@ -129,7 +129,7 @@
 %   Table of Contents
 %   =================
 %
-%   1. Wer sind wir?
+%   1. This is us!
 %   2. Was machen wir?
 %   3. Mailinglisten
 %   4. Wie lernt man Leute kennen
@@ -144,7 +144,7 @@
 %   Wer sind wir?
 %-------------------------------------------------------------------------------
 
-\section{Wir, die FSI!}
+\section{This is us, the FSI!}
 \begin{frame}{\insertsection}
 	\begin{figure}
 		\includegraphics[width=11cm]{pictures/fsi24.jpg}
@@ -160,7 +160,7 @@
 %   Was machen wir? Wir vertreten euch!
 %-------------------------------------------------------------------------------
 
-\section{Was machen wir?}
+\section{What we do?}
 \begin{frame}{\insertsection}
 	\begin{columns}
 		\column{.5\textwidth}
@@ -186,26 +186,26 @@
 		% \end{itemize}
 		\column{.5\textwidth}
 		\begin{itemize}[<+->]
-			\item \textbf{Beratung/Betreuung} bei deinen Problemen
+			\item \textbf{Help/Council} for your problems
 			      \note[item]{Bei Fragen und Problemen an die Fachschaft wenden}
 
-			\item \textbf{Kontakt} zur Professorenschaft
+			\item \textbf{Contact} to the faculty and staff
 			      \note[item]{FBI erwähnen aka monatl. Treffen
 				      \& FB Leitung ist uns aufgeschlossen}
 
-			\item \textbf{Repräsentation} in der Hochschulpolitik
+			\item \textbf{Representation} in university politics and other student bodies
 			      \note[item]{FBI erwähnen aka monatl. Treffen
 				      \& FB Leitung ist uns aufgeschlossen}
 
-			\item \textbf{Tools \& Services} wie PPI, Werkstatt
+			\item \textbf{Tools \& Services} like PPI, Student workshop (3D printers and such)
 
-			\item \textbf{Aktionen} und \textbf{Events}
-			      \faMusic Clubhausfest \dateCHF\ und \\
-			      \faBeer Weihnachtsfeier (TBA)
+			\item \textbf{Events}
+			      \faMusic Clubhausfest \dateCHF\ and
+			      \faBeer Christmas Party (TBA)
 			      % \faBeer Sommerfest \dateSommerfest
 			      \note[item]{Neben Ansprechsperson sind wir für Alkoholausschank da}
 
-			\item \textbf{Spaß haben!!}
+			\item \textbf{Having fun!}
 
 			      %            \item \textbf{Hochschulpolitik}: StuRa, FakRat
 			      %            \item \textbf{Gremien} wie Studienkommission, Prüfungsausschuss,
@@ -228,24 +228,23 @@
 %   Mailinglisten
 %-------------------------------------------------------------------------------
 
-\section{Mailinglisten}
+\section{Mailinglists}
 \begin{frame}[t]{\insertsection}
-	\textbf{Erstens:} Lest eure Uni-Mails!
-	\footnote{also die wichtigen. Wie ihr Spam" wegfiltert haben wir für euch hier:
+	\textbf{First of:} Read your emails!
+	\footnote{well, the important ones. Here the "How to filter Spam":
 		\url{https://github.com/fsi-tue/workshops/blob/master/2019/05-8-unimails.pdf}}
 	\begin{itemize}
 		\item \textbf{info-studium}\\
 		      \textcolor{red}{\faExclamationTriangle
-			      Der einzige Weg des Fachbereich euch wichtige Informationen
-			      zukommen zu lassen. Anmeldung ist \textbf{PFLICHT}!
+			      This is often the only way for us and general computer science faculty to reach you. Registration is basically obligatory.
 			      \faExclamationTriangle}
 		\item \textbf{info-talk}\\
-		      Für Informationen rund um Tübingen, der Informatik und dem Rest.
+		      Computer Science related stuff, like events in and around the Tübingen area.
 		\item \textbf{info-jobs}\\
-		      Jobangebote mit Bezahlung
+		      Distributes paid job opportunities
 	\end{itemize}
 	\vfill
-	\textbf{Anmeldung:} \url{\linkMaillists}
+	\textbf{Signup:} \url{\linkMaillists}
 
 	\note{Das hier ist \textit{arguably} die wichtigste Folie in der Präsentation.\\
 		Die einzige Möglichkeit von der Anmeldung zum \textbf{Praktikum Mikrocomputer}
@@ -256,18 +255,18 @@
 		moderiert.}
 \end{frame}
 
-\begin{frame}{Direkt anmelden!}
+\begin{frame}{Signup immeadiately!}
 	\begin{columns}
 		\column{.7\textwidth}
 		\begin{enumerate}
-			\item Auf die Seite gehen
-			\item Im Textfeld oben eure \textbf{Email-Adresse} eintragen
-			\item Den Button \textbf{\textsc{REGISTRIEREN}} anklicken
+			\item Go to the site
+			\item Enter your \textbf{email address}
+			\item Click the \textbf{\textsc{REGISTRIEREN}} Button
 		\end{enumerate}
 
 		\centering
 		\vspace{1cm}
-		{\huge\color{fsiblue} \faHandsWash Danke allerseits! }
+		{\huge\color{fsiblue} \faHandsWash Thanks everyone! }
 
 		\column{.3\textwidth}
 		\centering
@@ -312,21 +311,21 @@
 		\column{.7\textwidth}
 		\begin{itemize}
 			\large
-			\item {\large\faDice} Spieleabend  \dateSpieleabend
+			\item {\large\faDice} Game Night  \dateSpieleabend
 			\item {\large\faBeer} Flunkyball   \dateFlunkyball
-			\item {\large\faHiking} Wanderung  \dateWanderung
-			\item {\large\faBeer} Kneipentour  \dateKneipentour
-			\item {\large\faUtensils} Grillen  \dateGrillen
+			\item {\large\faHiking} Hike  \dateWanderung
+			\item {\large\faBeer} Pub Crawl  \dateKneipentour
+			\item {\large\faUtensils} Cookout/BBQ  \dateGrillen
 			      %\item {\large\faRoute} Stadtrallye \dateStadtrallye
 			      % \item {\large\faMapMarker} Abenteuer Schnitzel-Jagd \dateAbenteuerSchnitzeljagd
-			\item {\large\faFilm} Filmabend    \dateFilmabend
+			\item {\large\faFilm} Movie Night    \dateFilmabend
 			      % \item {\large\faBeer} Kastenlauf   \dateKastenlauf
-			\item {\large\faUtensils} Frühstück \dateBreakfast
+			\item {\large\faUtensils} Breakfast \dateBreakfast
 			      % \item {\large\faFlag} Capture the Flag \dateCTF
 		\end{itemize}
 		\centering
 		\vspace{1em}
-		{\huge\color{fsikturqoise} Anmeldung \faLongArrowAltRight}
+		{\huge\color{fsikturqoise} Signup \faLongArrowAltRight}
 
 		\column{.3\textwidth}
 		\centering
@@ -347,8 +346,7 @@
 	\begin{columns}
 		\column{.7\textwidth}
 		\centering
-		\textit{\Large Mit Leuten quatschen, Online-Spieleabende und
-			Übungsblätter remote machen?}\\[1em]
+		\textit{\Large Connect with your peers. Get to talk about assignmnents, hobbies and the like!}\\[1em]
 		{\Huge\color{fsikturqoise}\faComments}
 
 		%        
@@ -368,7 +366,7 @@
 %   Mach doch mit!
 %-------------------------------------------------------------------------------
 
-\section{Mach doch mit!}
+\section{Join us!}
 \begin{frame}{\insertsection}
 	\begin{columns}
 		\column{.5\textwidth}
@@ -403,10 +401,11 @@
 %    \end{columns}
 %\end{frame}
 
-\section{Mehr Informationen...}
+\section{More information}
 \begin{frame}{\insertsection}
 	\begin{columns}
-		\column{.3\textwidth}
+		\column{.5\textwidth}
+		\centering
 		\textcolor{fsiblue}{\qrcode[height=.5\textheight]{\linkWebsiteInfo}
 			\\[1em]
 			\url{\linkWebsiteInfo}}
@@ -416,18 +415,18 @@
 		\includegraphics[height=.8\textheight]{pictures/keepcalm.pdf} % TODO: Bild fehlt
 		% \includegraphics[height=.8\textheight]{pictures/keepcalm_fsik2.pdf} % Wo
 
-		\column{.3\textwidth}
-		\centering
-		% replaced qr code kogni for Sommersemester with Info, cause no kognis in Summer
-		\textcolor{fskgreen}{\qrcode[height=.5\textheight]{\linkWebsiteKogni}
-			\\[1em]
-			\url{\linkWebsiteKogni}}
+		% \column{.3\textwidth}
+		% \centering
+		% % replaced qr code kogni for Sommersemester with Info, cause no kognis in Summer
+		% \textcolor{fskgreen}{\qrcode[height=.5\textheight]{\linkWebsiteKogni}
+		% 	\\[1em]
+		% 	\url{\linkWebsiteKogni}}
 
 
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Diese Präsentation}
+\begin{frame}{This presentation}
 	\centering
 	\qrcode[height=.5\textheight]{\linkPresentation}\\[1em]
 	\url{\linkPresentation}
