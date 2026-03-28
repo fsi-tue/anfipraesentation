@@ -40,7 +40,7 @@ present: annotated
 
 .PHONY: clean
 clean:
-	if [ -d $(TMPDIR) ]; then rm --recursive ./$(TMPDIR); fi
+	if [ -d $(TMPDIR) ]; then rm -r ./$(TMPDIR); fi
 	rm -f makeconfig.tex
 
 .PHONY: distclean
