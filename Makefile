@@ -12,7 +12,7 @@ pictures/fsilogo_neu.pdf pictures/keepcalm.pdf config.tex
 BASE_CONF = 
 
 # Aliases
-all: ersti ersti_en
+all: ersti ersti_en  term-opening
 
 ersti: ersti.tex $(DEPENDENCIES)
 	if [ ! -f makeconfig.tex ]; then touch makeconfig.tex; fi
@@ -21,6 +21,12 @@ ersti: ersti.tex $(DEPENDENCIES)
 	cp $(TMPDIR)/$@.pdf $@.pdf
 
 ersti_en: ersti_en.tex $(DEPENDENCIES)
+	if [ ! -f makeconfig.tex ]; then touch makeconfig.tex; fi
+	if [ ! -d $(TMPDIR) ]; then mkdir $(TMPDIR); fi
+	latexmk -output-directory=$(TMPDIR) -pdf -pdflatex="pdflatex" $<
+	cp $(TMPDIR)/$@.pdf $@.pdf
+
+term-opening: term-opening.tex $(DEPENDENCIES)
 	if [ ! -f makeconfig.tex ]; then touch makeconfig.tex; fi
 	if [ ! -d $(TMPDIR) ]; then mkdir $(TMPDIR); fi
 	latexmk -output-directory=$(TMPDIR) -pdf -pdflatex="pdflatex" $<
@@ -44,7 +50,7 @@ clean:
 
 .PHONY: distclean
 distclean: clean
-	rm -f ersti.pdf ersti_en.pdf
+	rm -f ersti.pdf ersti_en.pdf term-opening.pdf
 
 .PHONY: info
 info:
@@ -57,6 +63,7 @@ help:
 	@echo '  all            - Build the Presentations'
 	@echo '  ersti          - Build the Ersti-Presentation'
 	@echo '  ersti_en       - Build the Ersti-Presentation (english)'
+	@echo '  term-opening   - Build the Term opening slides (english)'
 	@echo '  annotated      - Build short with notes on the righthand side'
 	@echo '  present        - Build annotated and show using pdfpc (pdfpc required)'
 	@echo 'Auxiliary targets:'

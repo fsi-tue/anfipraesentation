@@ -42,6 +42,6 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     mkdir $out
-    cp ersti.pdf ersti_en.pdf $out/
+    cp ersti.pdf ersti_en.pdf term-opening.pdf $out/
   '';
 }
