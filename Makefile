@@ -7,17 +7,24 @@ TMPDIR = tmp
 # werden! "\RequirePackage{snapshot}" ist hier sehr hilfreich, am besten
 # aktualisiert man das mal noch automatisch.
 DEPENDENCIES = beamercolorthemebeaver.sty beamerouterthemewuerzburg.sty beamerinnerthemechamfered.sty \
-pictures/fsilogo_neu.pdf pictures/keepcalm.pdf
+pictures/fsilogo_neu.pdf pictures/keepcalm.pdf config.tex
 
 BASE_CONF = 
 
 # Aliases
-all: ersti.pdf
+all: ersti ersti_en
 
-ersti.pdf: ersti.tex $(DEPENDENCIES)
+ersti: ersti.tex $(DEPENDENCIES)
+	if [ ! -f makeconfig.tex ]; then touch makeconfig.tex; fi
 	if [ ! -d $(TMPDIR) ]; then mkdir $(TMPDIR); fi
 	latexmk -output-directory=$(TMPDIR) -pdf -pdflatex="pdflatex" $<
-	cp $(TMPDIR)/$@ $@
+	cp $(TMPDIR)/$@.pdf $@.pdf
+
+ersti_en: ersti_en.tex $(DEPENDENCIES)
+	if [ ! -f makeconfig.tex ]; then touch makeconfig.tex; fi
+	if [ ! -d $(TMPDIR) ]; then mkdir $(TMPDIR); fi
+	latexmk -output-directory=$(TMPDIR) -pdf -pdflatex="pdflatex" $<
+	cp $(TMPDIR)/$@.pdf $@.pdf
 
 short: nonotes ersti.pdf
 nonotes:
@@ -37,7 +44,7 @@ clean:
 
 .PHONY: distclean
 distclean: clean
-	rm -f ersti.pdf
+	rm -f ersti.pdf ersti_en.pdf
 
 .PHONY: info
 info:
@@ -48,7 +55,8 @@ info:
 help:
 	@echo 'Building targets:'
 	@echo '  all            - Build the Presentations'
-	@echo '  ersti          - Build the shortened Ersti-Presentation'
+	@echo '  ersti          - Build the Ersti-Presentation'
+	@echo '  ersti_en       - Build the Ersti-Presentation (english)'
 	@echo '  annotated      - Build short with notes on the righthand side'
 	@echo '  present        - Build annotated and show using pdfpc (pdfpc required)'
 	@echo 'Auxiliary targets:'
