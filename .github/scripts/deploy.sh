@@ -31,5 +31,4 @@ put anfipraesentation/.BUILDINFO
 chmod 644 *
 EOF
 sftp -i /tmp/id_rsa -P "${PORT}" -b sftp-commands "${SFTP_USER}@${HOST}:${TARGET_DIRECTORY}"
-ssh "${SFTP_USER}:@${HOST}" -p "${PORT}" "ln -s ${TARGET_DIRECTORY}/anfipraesentation/ersti.pdf ${TARGET_DIRECTORY}/anfipraesentation/anfipraesentation_short.pdf"
 rm /tmp/id_rsa
