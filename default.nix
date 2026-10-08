@@ -19,7 +19,7 @@ stdenv.mkDerivation rec {
       inherit (texlive) scheme-minimal latexmk latexconfig latex latex-bin
         collection-fontsrecommended fontawesome5 dejavu
         etoolbox oberdiek graphics geometry hyperref url tools amsmath amscls beamer
-        mathtools babel babel-german hyphen-german subfig caption qrcode xkeyval
+        mathtools babel babel-german babel-english hyphen-german subfig caption qrcode xkeyval
         epstopdf-pkg eurosym translator l3packages xurl;
     })
   ];
@@ -32,12 +32,7 @@ stdenv.mkDerivation rec {
       -e "s,\\\year=\\\year,\\\year=$(date --date=$version +'%Y')," \
       -e "s,\\\month=\\\month,\\\month=$(date --date=$version +'%m')," \
       -e "s,\\\day=\\\day,\\\day=$(date --date=$version +'%d')," \
-      presentation.tex
-    sed -i \
-      -e "s,\\\year=\\\year,\\\year=$(date --date=$version +'%Y')," \
-      -e "s,\\\month=\\\month,\\\month=$(date --date=$version +'%m')," \
-      -e "s,\\\day=\\\day,\\\day=$(date --date=$version +'%d')," \
-      presentation_short.tex
+      ersti.tex
   '';
 
   buildPhase = ''
@@ -47,6 +42,6 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     mkdir $out
-    cp presentation.pdf presentation_short.pdf $out/
+    cp ersti.pdf ersti_en.pdf $out/
   '';
 }

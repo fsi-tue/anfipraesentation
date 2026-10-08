@@ -1,0 +1,447 @@
+% !TeX document-id = {fc3ccb1e-aeba-4c77-9990-74eef049f67c}
+% !TeX TXS-program:compile = txs:///pdflatex/[-output-directory=tmp]
+
+\documentclass[aspectratio=169]{beamer}
+
+%-------------------------------------------------------------------------------
+%   Edit colour scheme 
+%-------------------------------------------------------------------------------
+
+
+
+%===============================================================================
+
+\beamertemplatenavigationsymbolsempty
+\usepackage[utf8]{inputenc}
+\usepackage{DejaVuSans}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[fixed]{fontawesome5}
+
+\useoutertheme{infolines}
+\useinnertheme[realshadow,corners=2pt,padding=2pt]{chamfered}
+\usecolortheme{fsik}
+\usepackage[ngerman]{babel}
+\usepackage{graphics, graphicx}
+\usepackage{color}
+\usepackage{latexsym}
+\usepackage{etoolbox}
+\usepackage{subfig}
+\usepackage{tikz}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{xurl}
+\usepackage{qrcode}
+\usepackage{eurosym}
+
+\input{config.tex}
+
+% Override these to reproduce a build, if you run
+% "nix-build --argstr date YYYY-MM-DD" you don't need to change them manually:
+\year=\year
+\month=\month
+\day=\day
+
+% For a presenter mode viewer like 'pdfpc' invoked with 'make notes'
+\newif\ifnotes
+\input{makeconfig.tex}
+\ifnotes
+    \usepackage{pgfpages}
+    \setbeameroption{show notes on second screen}
+\fi
+
+
+\newcommand<>{\hover}[1]{\uncover#2{%
+		\begin{tikzpicture}[remember picture,overlay]%
+		\draw[fill,opacity=0.4] (current page.south west)
+		rectangle (current page.north east);
+		\node at (current page.center) {#1};
+		\end{tikzpicture}}
+}
+
+\setbeamertemplate{headline}{}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{fsiblue}{HTML}{000080}
+\definecolor{fsikturqoise}{HTML}{008080}
+\definecolor{fskgreen}{HTML}{008000}
+
+\title{Fachschaftsvorstellung}
+\author{\textbf{fsi/k}}
+
+\begin{document}
+
+%------------------------------------------------------------------------------
+%   Title
+%------------------------------------------------------------------------------
+\begin{frame}
+	\centering
+	\vspace{.5cm}
+	\includegraphics[width=0.6\textwidth]{pictures/fsilogo_neu.pdf}\\
+	\includegraphics[width=0.6\textwidth]{pictures/fsk-logo.png}\\ % TODO: Richtiges PDF Logo
+	\vspace*{0.5cm}
+	\begin{Large}
+		Hey! Wir helfen euch $\{\text{ins}\mid\text{im}\}$ Studium!
+	\end{Large}
+
+	\vspace{1cm}
+	\semester
+\end{frame}
+
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+%   Table of Contents
+%   =================
+%
+%   1. Wer sind wir?
+%   2. Was machen wir?
+%   3. Mailinglisten
+%   4. Wie lernt man Leute kennen
+%       4.1 Ersti-Programm
+%       4.2 Erstiheft
+%       4.3 Discord
+%   5. Mach doch mit!	
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+
+%-------------------------------------------------------------------------------
+%   Wer sind wir?
+%-------------------------------------------------------------------------------
+
+\section{Wir, die FSI!}
+\begin{frame}{\insertsection}
+	\begin{figure}
+		\includegraphics[width=11cm]{pictures/fsi26.jpg}
+	\end{figure}
+
+	\note{Hier labern wir sympathisch alá ''Das da bin ich ohne Maske'',
+		''Das ist der Tim'', ''Oh guck! Grace!'' usw.}
+\end{frame}
+
+
+
+%-------------------------------------------------------------------------------
+%   Was machen wir? Wir vertreten euch!
+%-------------------------------------------------------------------------------
+
+\section{Was machen wir?}
+\begin{frame}{\insertsection}
+	\begin{columns}
+		\column{.5\textwidth}
+		% \huge\itshape \textcolor{fsikturqoise}{Wir vertreten euch!}
+		% \begin{frame}[<+->]
+		\only<1>{\includegraphics[width=\linewidth]{pictures/MedienInfoStand.JPG}}
+		\only<2>{\includegraphics[width=\linewidth]{pictures/FSI_pulli_hinten.JPG}}
+		\only<3>{\includegraphics[width=\linewidth]{pictures/productiveFSIKWork.JPG}}
+		\only<4>{\includegraphics[width=\linewidth]{pictures/FSIKzusammen.JPG}}
+		\only<5>{
+			\begin{minipage}{\linewidth}
+				\centering
+				\hspace{-1.5cm} % Bild weiter nach links verschieben
+				\includegraphics[width=5cm]{pictures/clubhausfest.JPG} \\
+				\vspace{0,01cm} % Vertikalen Abstand anpassen
+				\hspace{1.5cm} % Unteres Bild mehr nach rechts schieben
+				\includegraphics[width=5cm]{pictures/sommerfest.JPG}
+				%  \includegraphics[width=5cm]{pictures/weihnachtsfeier.JPG}
+			\end{minipage}
+		}
+		\only<6>{\includegraphics[width=\linewidth]{pictures/fsi24_lieb.jpg}}
+
+		% \end{itemize}
+		\column{.5\textwidth}
+		\begin{itemize}[<+->]
+			\item \textbf{Beratung/Betreuung} bei deinen Problemen
+			      \note[item]{Bei Fragen und Problemen an die Fachschaft wenden}
+
+			\item \textbf{Kontakt} zur Professorenschaft
+			      \note[item]{FBI erwähnen aka monatl. Treffen
+				      \& FB Leitung ist uns aufgeschlossen}
+
+			\item \textbf{Repräsentation} in der Hochschulpolitik
+			      \note[item]{FSVV erwähnen aka wöchentl. Treffen
+				      mit versch. FSen}
+
+			\item \textbf{Tools \& Services} wie PPI, Werkstatt
+
+			\item \textbf{Aktionen} und \textbf{Events}
+			      \faMusic Clubhausfest \dateCHF\ % und \\
+			      % \faBeer Sommerfest (TBA)
+			      % \faBeer Sommerfest \dateSommerfest
+			      \note[item]{Neben Ansprechsperson sind wir für Alkoholausschank da}
+
+			\item \textbf{Spaß haben!!}
+
+			      %            \item \textbf{Hochschulpolitik}: StuRa, FakRat
+			      %            \item \textbf{Gremien} wie Studienkommission, Prüfungsausschuss,
+			      %                  Berufungskommissionnen
+			      %            \note[item]{Im PA sitzen Leute, die bei Härtefallanträgen auf deiner
+			      %                        Seite sind. Evaluationen werden in Stuko besprochen,...}
+			      %
+			      %            \item \textbf{Tools \& Services} wie PPI, KKI, BBB, CodiMD
+			      %            \note[item]{Alktklausuren auf \texttt{ppi.fsi.uni-...}, Kneipen auf 
+			      %                        \texttt{kki.fsi.uni-...}, Eigene VideoConf auf 
+			      %                        \texttt{bbb.fsi.uni-...}, Gemeinsame Notizen auf 
+			      %                        \texttt{notes.fsi.uni-...}}
+		\end{itemize}
+
+	\end{columns}
+\end{frame}
+
+
+%-------------------------------------------------------------------------------
+%   Mailinglisten
+%-------------------------------------------------------------------------------
+
+\section{Mailinglisten}
+\begin{frame}[t]{\insertsection}
+	\textbf{Erstens:} Lest eure Uni-Mails!
+	\footnote{also die wichtigen. Wie ihr Spam" wegfiltert haben wir für euch hier:
+		\url{https://github.com/fsi-tue/workshops/blob/master/2019/05-8-unimails.pdf}}
+	\begin{itemize}
+		\item \textbf{info-studium}\\
+		      \textcolor{red}{\faExclamationTriangle
+			      Der einzige Weg des Fachbereich euch wichtige Informationen
+			      zukommen zu lassen. Anmeldung ist \textbf{PFLICHT}!
+			      \faExclamationTriangle}
+		\item \textbf{info-talk}\\
+		      Für Informationen rund um Tübingen, der Informatik und dem Rest.
+		\item \textbf{info-jobs}\\
+		      Jobangebote mit Bezahlung
+	\end{itemize}
+	\vfill
+	\textbf{Anmeldung:} \url{\linkMaillists}
+
+	\note{Das hier ist \textit{arguably} die wichtigste Folie in der Präsentation.\\
+		Die einzige Möglichkeit von der Anmeldung zum \textbf{Praktikum Mikrocomputer}
+		und dem \textbf{Teamprojekt} zu erfahren. Letztere ist nur einmal im
+		Jahr.\\
+		Oder wenn der Prüfungsausschuss Informationen verschicken will.\\[2em]
+		info-talk für Studenten-Kosmos und info-jobs Jobangebote, beide
+		moderiert.}
+\end{frame}
+
+\begin{frame}{Direkt anmelden!}
+	\begin{columns}
+		\column{.7\textwidth}
+		\begin{enumerate}
+			\item Auf die Seite gehen
+			\item Im Textfeld oben eure \textbf{Email-Adresse} eintragen
+			\item Den Button \textbf{\textsc{REGISTRIEREN}} anklicken
+		\end{enumerate}
+
+		\centering
+		\vspace{1cm}
+		{\huge\color{fsiblue} \faHandsWash Danke allerseits! }
+
+		\column{.3\textwidth}
+		\centering
+		\qrcode[height=.9\linewidth]{\linkMaillists}
+		\\[1em]
+		\url{\linkMaillists}
+	\end{columns}
+	\note{Hier jetzt Zeit geben, dass sich die Erstis anmelden können}
+\end{frame}
+
+
+%-------------------------------------------------------------------------------
+%   Erstiheft 
+%-------------------------------------------------------------------------------
+
+%\begin{frame}{Erstiheft}
+%	\begin{columns}
+%		\column{.25\textwidth}
+%		\begin{figure}
+%			\colorbox[HTML]{b5efa4}{
+%				\includegraphics[height=.7\textheight]{pictures/erstiheft-kogni.pdf}} % TODO: Wo Bild
+%		\end{figure}
+%
+%		\column{.25\textwidth}
+%		\begin{figure}
+%			\colorbox[HTML]{78b8ef}{
+%				\includegraphics[height=.7\textheight]{pictures/erstiheft-info.pdf}} % TODO: Wo Bild
+%		\end{figure}
+%
+%		\column{.3\textwidth}
+%		\centering
+%		\qrcode[height=.8\linewidth]{\linkErstiheft} 		\\[1em]
+%		\url{\linkErstiheft}
+% 	\end{columns}
+
+% 	\note{Hier kann auch sehr gut darauf hingewiesen werden, dass alle unsere
+% 		Materialien online abrufbar sind.}
+% \end{frame}
+
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% TODO: Might replace with generic version without dates
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsection{Ersti-Programm}
+
+\begin{frame}{\insertsubsection}
+	\begin{columns}
+		\column{.7\textwidth}
+		\begin{itemize}
+			\large
+			\item {\large\faDice} Spieleabend  \dateSpieleabend
+			\item {\large\faBeer} Flunkyball   \dateFlunkyball
+			\item {\large\faHiking} Wanderung  \dateWanderung
+			\item {\large\faBeer} Kneipentour  \dateKneipentour
+			\item {\large\faUtensils} Grillen  \dateGrillen
+			\item {\large\faMap} Stadtrallye \dateStadtrallye
+			% \item {\large\faMapMarker} Abenteuer Schnitzel-Jagd \dateAbenteuerSchnitzeljagd
+			%\item {\large\faFilm} Filmabend    \dateFilmabend
+			% \item {\large\faBeer} Kastenlauf   \dateKastenlauf
+			\item {\large\faUtensils} Frühstück \dateBreakfast
+			% \item {\large\faFlag} Capture the Flag \dateCTF
+		\end{itemize}
+		\centering
+		\vspace{1em}
+		{\huge\color{fsikturqoise} Anmeldung \faLongArrowAltRight}
+
+		\column{.3\textwidth}
+		\centering
+		\qrcode[height=.9\linewidth]{\linkAnmeldung}
+		\\[1em]
+		\url{\linkAnmeldung}
+	\end{columns}
+
+	\note{Hier lässt sich darauf hinweisen, dass die Anmeldung zwecks Planbarkeit
+		sehr gewünscht ist.}
+\end{frame}
+
+
+%-------------------------------------------------------------------------------
+%   Erstigruppen
+%-------------------------------------------------------------------------------
+
+\section{Bachelor Ersti-Gruppen}
+\begin{frame}{\insertsection}
+	\begin{columns}
+		\column{.3\textwidth}
+		\centering
+		\textcolor{fsiblue}{
+			\qrcode[height=.9\linewidth]{\linkGruppeInfo}
+			\\[1em]
+			\footnotesize\textbf{*-Informatik}
+			\\[0.5em]
+			\footnotesize\url{\linkGruppeInfo}}
+
+		\column{.4\textwidth}
+		\centering
+		\includegraphics[height=0.65\textheight]{pictures/fsi_ducky.png}
+
+		\column{.3\textwidth}
+		\centering
+		\textcolor{fskgreen}{
+			\qrcode[height=.9\linewidth]{\linkGruppeKogni}
+			\\[1em]
+			\footnotesize\textbf{Kognitionswissenschaft}
+			\\[0.5em]
+			\footnotesize\url{\linkGruppeKogni}}
+			\newline\large
+			\newline\large
+
+
+	\end{columns}
+\end{frame}
+
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsection{Sonstiges}
+\begin{frame}{Discord anyone?}
+	\begin{columns}
+		\column{.7\textwidth}
+		\centering
+		\textit{\Large Mit Leuten quatschen, Online-Spieleabende und
+			Übungsblätter remote machen?}\\[1em]
+		{\Huge\color{fsikturqoise}\faComments}
+
+		%        
+		\column{.3\textwidth}
+		\centering
+		\qrcode[height=.9\linewidth]{\linkDiscord}
+		\\[1em]
+		\url{\linkDiscord}
+	\end{columns}
+
+	\note{Kommunikation ist wichtig; Wurde von nem Studi eröffnet, wir haben
+		uns da rangehangen; usw u so fort...}
+\end{frame}
+
+
+%-------------------------------------------------------------------------------
+%   Mach doch mit!
+%-------------------------------------------------------------------------------
+
+\section{Mach doch mit!}
+\begin{frame}{\insertsection}
+	\begin{columns}
+		\column{.5\textwidth}
+		\Large
+		{\Huge\color{fsikturqoise} \faClock[regular]}   \timeSitzung \\[.5em]
+		{\Huge\color{fsiblue} \faMapMarker*}       \locFachschaftszimmer\\[.5em]
+		{\Huge\color{fskgreen} \faMapMarker*}       \locFSKammer\\[.5em]
+		\color{darkgray}
+		\column{.5\textwidth}
+		\centering
+		\includegraphics[angle=90, width=4.5cm]{pictures/bene_liebt_fsi.JPG}
+	\end{columns}
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%   Link zu dieser Präsentation
+%-------------------------------------------------------------------------------
+
+%\section{Diese Präsentation zum selber durchklicken}
+%\begin{frame}{\insertsection}
+%    \begin{columns}
+%        \column{.5\textwidth}
+%        \centering
+%        \includegraphics[height=.8\textheight]{pictures/keepcalm.pdf}
+%
+%        \column{.5\textwidth}
+%        \centering
+%        \qrcode[height=.5\textheight]{\linkPresentation}
+%        \\[1em]
+%        \url{\linkPresentation}
+%
+%    \end{columns}
+%\end{frame}
+
+\section{Mehr Informationen...}
+\begin{frame}{\insertsection}
+	\begin{columns}
+		\column{.3\textwidth}
+		\centering
+		\textcolor{fsiblue}{\qrcode[height=.5\textheight]{\linkWebsiteInfo}
+			\\[1em]
+			\url{\linkWebsiteInfo}}
+
+		\column{.4\textwidth}
+		\centering
+		\includegraphics[height=.8\textheight]{pictures/keepcalm.pdf} % TODO: Bild fehlt
+		% \includegraphics[height=.8\textheight]{pictures/keepcalm_fsik2.pdf} % Wo
+
+		\column{.3\textwidth}
+		\centering
+		% replace qr code kogni for Sommersemester with Info, cause no kognis in Summer
+		%\textcolor{fsiblue}{\qrcode[height=.5\textheight]{\linkWebsiteInfo}
+			%\\[1em]
+			%\url{\linkWebsiteInfo}}
+
+		\textcolor{fskgreen}{\qrcode[height=.5\textheight]{\linkWebsiteKogni}
+			\\[1em]
+			\url{\linkWebsiteKogni}}
+
+
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Diese Präsentation}
+	\centering
+	\qrcode[height=.5\textheight]{\linkPresentation}\\[1em]
+	\url{\linkPresentation}
+\end{frame}
+
+\end{document}
